@@ -198,7 +198,29 @@ export const asyncRouterMap = [
       }
     ]
   },
-
+  {
+    path: '/userpermission',
+    component: Layout,
+    redirect: 'noredirect',
+    name: '用户权限管理',
+    meta: {
+      title: '用户权限管理',
+      icon: 'email'
+    },
+    children: [
+      {
+        path: 'tabsTable',
+        component: _import('userpermission/tabsTable/index'),
+        name: 'haomo-HmTabsTable',
+        meta: {
+          title: '组织结构'
+        }
+      },
+      { path: 'markdown', component: _import('userpermission/markdown'), name: 'markdown-demo', meta: { title: '角色管理' }},
+      { path: 'json-editor', component: _import('userpermission/jsonEditor'), name: 'jsonEditor-demo', meta: { title: '用户管理' }},
+      { path: 'dnd-list', component: _import('userpermission/dndList'), name: 'dndList-demo', meta: { title: '菜单管理' }}
+    ]
+  },
   {
     path: '/permission',
     component: Layout,
@@ -226,7 +248,6 @@ export const asyncRouterMap = [
       meta: { title: 'icons', icon: 'icon', noCache: true }
     }]
   },
-
   {
     path: '/components',
     component: Layout,
